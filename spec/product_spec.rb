@@ -5,10 +5,12 @@ require 'spec_helper'
 Capybara.app = App
 
 feature 'User manages a homepage' do
-  scenario 'User sees Welcome on the homepage and clicks a link called Add a Product' do
+  scenario 'User can enter a product into form and click create product' do
     visit '/'
     expect(page).to have_content 'Welcome'
     click_link 'Add a Product'
+    fill_in 'new_product', :with => 'Applesauce'
+    click_on 'Create Product'
   end
 end
 
