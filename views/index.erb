@@ -2,5 +2,8 @@
 <body>
 <h1>Welcome</h1>
 <h2><a href="/products/new">Add a Product</a></h2>
+<% products.each do |product| %>
+<li><%= product %></li>
+    <% end %>
 </body>
 </html>
